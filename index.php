@@ -1,19 +1,9 @@
 	<?php /*Template Name: PrimeiraPágina*/?>
 	<?php get_header(); ?>
 
-	<div id="menuLateral" class="col-quarto">
-		<aside>
-			<?php get_sidebar(); ?>
-		</aside>
-	</div><!--menuLateral-->
 
 	<div id="conteudo" class="col-3quarto row">
 	<section>
-		<div id="conteudoId">
-<!-- 			<header>
-				<h1>Identificação da página</h1>
-			</header> -->
-		</div>
 		<?php while ( have_posts() ) : the_post() ?>
 		<?php
 		//remove o filtro de link das midias sociais desta página 
@@ -39,7 +29,7 @@
 
 			<h2><a href="<?php echo esc_url( $category_link_noticia ); ?>">Notícias</a></h2>
 			<article>
-				<div class="listaNoticia">
+				<div class="listaNoticia row">
 					<ul>
 					<?php if (have_posts()) :?>	
 						<?php while ( have_posts() ) : the_post() ?>
@@ -48,15 +38,17 @@
 							//remove as imagens dos posts na página principal
 							 add_filter( 'the_content', 'remove_images', 100 );
 						 ?>
-						<li class="row cartao">
-							<?php the_post_thumbnail(); ?>
-							<h3>
-								<span><?php the_time('d/m/y'); ?></span>
-								<a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a>
-							</h3>
-							<div class="artCont row">
+						<li class="row  col-terco">
+							<div class="container cartao">
+								<?php the_post_thumbnail(); ?>
+								<h3>
+									<span><?php the_time('d/m/y'); ?></span>
+									<a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a>
+								</h3>
+								<div class="artCont row">
 
-								<?php the_content( __( 'Leia mais <span class="meta-nav">»</span>', 'your-theme' )  ); ?>
+									<?php the_content( __( 'Leia mais <span class="meta-nav">»</span>', 'your-theme' )  ); ?>
+								</div>
 							</div>
 						</li>
 						<?php endwhile; else: ?>
@@ -75,7 +67,15 @@
 					<ul>
 					<?php if (have_posts()) :?>
 						<?php while ( have_posts() ) : the_post() ?>
-						<li><h3><!--<span><?php the_time('d/m/y'); ?></span>--> <a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h3></li>
+						<li>
+							<div class="container cartao row">
+								<?php the_post_thumbnail(); ?>
+								<h3 class="box">
+									<!--<span><?php the_time('d/m/y'); ?></span>-->
+									<a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a>
+								</h3>
+							</div>
+						</li>
 						<?php endwhile; else: ?>
 							<p><?php _e( 'Não existe Evento no momento.' ); ?></p>
 					<?php endif; ?>
@@ -86,4 +86,11 @@
 
 	</section>
 	</div><!--conteudo-->
+
+
+	<div id="menuLateral" class="col-quarto container">
+		<aside>
+			<?php get_sidebar(); ?>
+		</aside>
+	</div><!--menuLateral-->
 <?php get_footer(); ?>
