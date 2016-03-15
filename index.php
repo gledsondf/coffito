@@ -1,7 +1,6 @@
 	<?php /*Template Name: PrimeiraPágina*/?>
 	<?php get_header(); ?>
 
-
 	<div id="conteudo" class="col-3quarto row">
 	<section>
 		<?php while ( have_posts() ) : the_post() ?>
@@ -69,11 +68,16 @@
 						<?php while ( have_posts() ) : the_post() ?>
 						<li>
 							<div class="container cartao row">
-								<?php the_post_thumbnail(); ?>
-								<h3 class="box">
-									<!--<span><?php the_time('d/m/y'); ?></span>-->
-									<a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a>
-								</h3>
+								<div class="col-quarto">
+								 <?php the_post_thumbnail(); ?>
+								</div>
+								<div class="col-3quarto">
+									<h3 class="">
+										<!--<span><?php the_time('d/m/y'); ?></span>-->
+										<a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a>
+									</h3>
+
+								</div>
 							</div>
 						</li>
 						<?php endwhile; else: ?>

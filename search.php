@@ -1,30 +1,36 @@
-	
-	<?php get_header(); ?>
-
-	<div id="menuLateral" class="col-quarto">
-		<aside>
-			<?php get_sidebar(); ?>
-		</aside>
-	</div><!--menuLateral-->
-
-	<div id="conteudo" class="col-3quarto row">
+<?php get_header(); ?>
+<div id="conteudo" class="col-3quarto row">
 	<section>
-		<div id="conteudoId">
-			<header>
-				<h1><?php the_title(); ?></h1>
-			</header>
-		</div>
-
 		<?php /* O Ciclo — com comentários! */ ?>
+		<?php if (have_posts()) :?>	
 		<?php while ( have_posts() ) : the_post() ?>
 		<?php /* Criando uma div com um ID único graças ao the_ID() e classes semânticas com o post_class() */ ?>
-				<div id="post-<?php the_ID(); ?>" class="artigo">
-					<article>
-						<?php include "conteudoArtigo.php"; ?>
+		<div id="post-<?php the_ID(); ?>" class="artigo row">
+			<article>
+				<?php include "conteudoArtigo.php"; ?>
 
-					</article>
-				</div>
-		<?php endwhile; ?>
-	</section>
-	</div><!--conteudo-->
+			</article>
+		</div>
+	<?php endwhile; else: ?>
+	<div id="post-<?php the_ID(); ?>" class="artigo row">	
+		<div class="artTopoPagina">
+			<header>
+				<?php /* um título h1 */ ?>						
+				<h1>Resultado da busca</h1>
+			</header>
+		</div><!--artTopo-->
+		<div class="artCont row">
+			<?php /* O conteúdo da postagem */ ?>
+			<h2>Sinto muito, mas não foi possível encontrar termo procurado.</h2>
+		</div><!--artCont-->	
+	</div>
+<?php endif; ?>
+</section>
+</div><!--conteudo-->
+
+<div id="menuLateral" class="col-quarto container">
+	<aside>
+		<?php get_sidebar(); ?>
+	</aside>
+</div><!--menuLateral-->
 <?php get_footer(); ?>

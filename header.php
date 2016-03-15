@@ -51,12 +51,12 @@
  -->
 <!-- <div class="skip-link"><a href="#content" title="<?php _e( 'Skip to content', 'seu-template' ) ?>"><?php _e( 'Skip to content', 'seu-template' ) ?></a></div>
  -->	<div id="topo" class="row">
-		<div id="logo">
+		<div id="logo" class="col-quarto">
 			<div id="contLogo">
 				<a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/img/logoCoffito.png" /></a>
 			</div>
 		</div>
-		<div id="menu">
+		<div id="menu" class="col-3quarto">
 			<nav>
 				<ul id="menuP">
 					<li>
@@ -74,4 +74,13 @@
 		</div>
 	</div><!--top-->
 <div id="geral" class="row">
-<div id="acessibilidade" class="row"></div>
+<div id="acessibilidade" class="row">
+<?php 
+if (is_home()|| is_page_template()) {
+
+}else {
+wp_custom_breadcrumbs();
+	
+};
+?>	
+</div>
