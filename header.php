@@ -75,12 +75,19 @@
 	</div><!--top-->
 <div id="geral" class="row">
 <div id="acessibilidade" class="row">
-<?php 
-if (is_home()|| is_page_template()) {
+	<div id="contAcessibilidade" class="col-3quarto">
 
-}else {
-wp_custom_breadcrumbs();
+<?php 
+if (is_home()|| is_page_template("index.php")) {
+	 $homeLink = get_bloginfo('url');
+	 $imgLink = get_bloginfo('template_url');
+echo '<span class="primeiro"><a href="'.$homeLink.'">'.'<img title="COFFITO - Página principal"  src="'.$imgLink.'/img/home.png" /></a></span>';
+
 	
+}else{
+wp_custom_breadcrumbs();
+
 };
 ?>	
+</div>
 </div>

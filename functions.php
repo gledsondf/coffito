@@ -55,7 +55,7 @@ function register_my_menus() {
   	array(
   			'menu-principal' => __('Menu Principal'),
   			'menu-acesso-rapido' => __( 'Menu Acesso Rápido' ),
-  			'menu-servicos' => __('Serviços'),
+  			'menu-auxiliar' => __('Auxiliar'),
         'menu-fisioterapia' => __('Menu Fisioterapia'),
         'menu-terapiaOcupacional' => __('Menu Terapia Ocupacional'),
         'menu-comunicacao' => __('Menu Comunicação')
@@ -119,7 +119,8 @@ function wp_custom_breadcrumbs() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $delimiter = '&raquo;'; // delimiter between crumbs
-  $home = 'Home'; // text for the 'Home' link
+  $imgLink = get_bloginfo('template_url');
+  $home = '<span class="primeiro"><img title="COFFITO - Página principal" src="'.$imgLink.'/img/home.png" /></span>'; // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
