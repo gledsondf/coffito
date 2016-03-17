@@ -130,11 +130,11 @@ function wp_custom_breadcrumbs() {
  
   if (is_home() || is_front_page()) {
  
-    if ($showOnHome == 1) echo '<div id="crumbs" class="col-3quarto"><a href="' . $homeLink . '">' . $home . '</a></div>';
+    if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
  
   } else {
  
-    echo '<div id="crumbs" class="col-3quarto"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+    echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);

@@ -12,21 +12,21 @@
 		<?php endwhile; ?>
 		<?php /* O Ciclo — com comentários! */ ?>
 
-		<?php query_posts("category_name=noticiaFisio&posts_per_page=3");?>
+		<?php query_posts("category_name=noticiafisio&posts_per_page=3");?>
 		<div class="principalArtigo artigo row">
 			<?php
 				    // Get the ID of a given category
-				    $category_noticiaFisio = get_cat_ID( 'noticiaFisio' );
+				    $category_noticiafisio = get_cat_ID( 'notícia - Fisioterapia' );
 				   
 
 				    // Get the URL of this category
- 				   $category_link_noticiaFisio = get_category_link( $category_noticiaFisio );
+ 				   $category_link_noticiafisio = get_category_link( $category_noticiafisio );
  				   
 			?>
 
 <!-- Print a link to this category -->
 
-			<h2><a href="<?php echo esc_url( $category_link_noticiaFisio ); ?>">Notícias</a></h2>
+			<h2><a href="<?php echo esc_url( $category_link_noticiafisio ); ?>">Notícias</a></h2>
 			<article>
 				<div class="listaNoticia row">
 					<ul>

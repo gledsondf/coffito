@@ -2,9 +2,9 @@
 	<?php get_search_form(); ?>
 
 </div>	
+	<h1>Fisioterapia</h1>
 <div id="contMenuServico" class="contMenuLateral box barra">
 	<nav>
-		<!-- <h1>Serviços</h1> -->
 			<div class="menu"><ul><?php wp_nav_menu( array( 'theme_location' => 'menu-fisioterapia','items_wrap' => '%3$s','container' => '', ) ); ?></ul></div>
 	</nav>
 </div>

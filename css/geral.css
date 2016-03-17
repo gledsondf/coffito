@@ -347,6 +347,11 @@
 			margin:0 0 20px;
 			padding: 10px 0;
 		}
+
+		#menuLateral h1 {
+			font-size: 20px;
+		}
+
 		#menuLateral {
 			position: relative;
 			/*padding: 0 0 30px 0;*/
@@ -453,6 +458,10 @@
 			text-transform: uppercase;
 		}
 
+/*		.contMenuLateral {
+			font-size: 
+		}*/
+
 		div#contMenuServico {
 
 		}
@@ -467,6 +476,7 @@
 			/*background: #fff;*/
 			position: relative;
 			text-align: left;
+			min-height: 550px;
 		}
 
 		#conteudoId {
@@ -501,6 +511,10 @@
 			height: 100%;
 		}
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx artigo*/
+		.linkTodasNoticias {
+			float: right;
+			margin: 10px 0;
+		}
 		div.principalArtigo ul {
 			list-style-type: none;
 		}
@@ -514,7 +528,7 @@
 		}
 
 		div.principalArtigo h3 {
-			font-size: 20px !important;
+			font-size: 18px !important;
 		}
 
 		div.principalArtigo h3 span {
@@ -553,7 +567,8 @@
 		}
 
 		div.artigo {
-			margin: 5px 0 40px;
+			margin: 5px 0 10px;
+			
 		}
 
 
@@ -574,7 +589,7 @@
 			text-decoration: underline;
 		}
 		div.artigo h1 {
-			font-size: 25px;
+			font-size: 20px;
 			border-bottom: 2px dotted #d5d5d5;
 		}
 
@@ -622,10 +637,14 @@
 		}
 
 		div.artcont img {
-			padding: 10px;
-			margin: 10px;
+			padding: 5px;
+			margin: 5px;
 			float: left;
 			box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.2)!important;
+		}
+
+		div.artcont img.normal {
+			float: none;
 		}
 
 		div.artfoot {
@@ -678,6 +697,7 @@
 		div.artfoot ul#linkCategoria a {
 			text-decoration: none;
 			color: #0d8ba1;
+			display: inline;
 		}
 
 		div.artfoot ul#linkCategoria a:hover {
@@ -685,6 +705,11 @@
 			border-radius:none !important;
 			background: none;
 
+		}
+
+		div.listaNoticia div.container.cartao {
+			height: 410px;
+			overflow: hidden;
 		}
 		.cartao {
 			margin:5px 2px;
@@ -712,6 +737,7 @@
 			background-color: #373B41;
 			position: relative;
 			border-top: 3px solid #4DBF5A;
+			min-height: 300px;
 		}
 		#contRodape {
 			margin: 0 auto;

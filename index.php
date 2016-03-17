@@ -17,6 +17,7 @@
 			<?php
 				    // Get the ID of a given category
 				    $category_noticia = get_cat_ID( 'noticia' );
+				      $category_noticiafisio = get_cat_ID( 'notícia - Fisioterapia' );
 				    $category_evento = get_cat_ID( 'evento' );
 
 				    // Get the URL of this category
@@ -56,6 +57,7 @@
 					</ul>
 				</div>
 			</article>
+			<p class="linkTodasNoticias row"><a href="<?php echo esc_url( $category_link_noticia ); ?>">todas as notícias</a></p>
 		</div>
 
 		<?php query_posts("category_name=evento&posts_per_page=3");?>
