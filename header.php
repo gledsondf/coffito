@@ -51,38 +51,42 @@
  -->
 <!-- <div class="skip-link"><a href="#content" title="<?php _e( 'Skip to content', 'seu-template' ) ?>"><?php _e( 'Skip to content', 'seu-template' ) ?></a></div>
  -->	<div id="topo" class="row">
-		<div id="logo" class="col-quarto">
-			<div id="contLogo">
-				<a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/img/logoCoffito.png" /></a>
+		<div id="topoContainer" class="row">
+			<div id="logo" class="col-quarto">
+				<div id="contLogo">
+					<a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/img/logoCoffito.png" /></a>
+				</div>
 			</div>
-		</div>
-		<div id="menu" class="col-3quarto">
-			<nav>
-				<ul id="menuP">
-					<li>
-						<a href="#" onclick="abreMenu()"><img src="<?php bloginfo('template_url'); ?>/img/tresmenu.png" /></a>
-					</li>
+			<div id="menu" class="col-3quarto">
+				<nav>
+					<ul id="menuP">
+						<li>
+							<a href="#" onclick="abreMenu()"><img src="<?php bloginfo('template_url'); ?>/img/tresmenu.png" /></a>
+						</li>
 
-				</ul>
-				<ul id="menuN">
-					<li class="fecharMenu" ><a href="#" onclick="fecharMenu()"><img src="<?php bloginfo('template_url'); ?>/img/fecharMenu.png" /></a></li>
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-principal','items_wrap' => '%3$s','container' => '', ) ); ?>
-				<!-- 	<?//php wp_list_pages('title_li='); ?> -->
+					</ul>
+					<ul id="menuN">
+						<li class="fecharMenu" ><a href="#" onclick="fecharMenu()"><img src="<?php bloginfo('template_url'); ?>/img/fecharMenu.png" /></a></li>
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-principal','items_wrap' => '%3$s','container' => '', ) ); ?>
+					<!-- 	<?//php wp_list_pages('title_li='); ?> -->
 
-				</ul>
-			</nav>
-		</div>
+					</ul>
+				</nav>
+			</div>
+		</div><!--topoContainer-->
 	</div><!--top-->
 <div id="geral" class="row">
 <div id="acessibilidade" class="row">
-	<div id="contAcessibilidade" class="col-3quarto">
+	<div id="contAcessibilidade" class="col-col row">
 
 <?php 
 if (is_home()|| is_page_template("index.php")) {
 	 $homeLink = get_bloginfo('url');
 	 $imgLink = get_bloginfo('template_url');
-echo '<span class="primeiro"><a href="'.$homeLink.'">'.'<img title="COFFITO - Página principal"  src="'.$imgLink.'/img/home.png" /></a></span>';
 
+echo '<div id="crumbs" class="col-3quarto">';	 
+echo '<span class="primeiro"><a href="'.$homeLink.'">'.'<img title="COFFITO - Página principal"  src="'.$imgLink.'/img/home.png" /></a></span>';
+echo '</div>';
 	
 }else{
 wp_custom_breadcrumbs();

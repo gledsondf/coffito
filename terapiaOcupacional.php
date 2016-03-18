@@ -16,7 +16,8 @@
 		<div class="principalArtigo artigo row">
 			<?php
 				    // Get the ID of a given category
-				    $category_noticiaTo = get_cat_ID( 'notícia - Terapia Ocupacional' );
+				    //$category_noticiaTo = get_cat_ID( 'notícia - Terapia Ocupacional' );
+				    $category_noticiaTo = get_category_by_slug("noticiaTo")->cat_ID;
 				   
 
 				    // Get the URL of this category

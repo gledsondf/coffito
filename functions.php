@@ -130,11 +130,11 @@ function wp_custom_breadcrumbs() {
  
   if (is_home() || is_front_page()) {
  
-    if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+    if ($showOnHome == 1) echo '<div id="crumbs" class="col-3quarto"><a href="' . $homeLink . '">' . $home . '</a></div>';
  
   } else {
  
-    echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+    echo '<div id="crumbs" class="col-3quarto"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
@@ -142,7 +142,7 @@ function wp_custom_breadcrumbs() {
       echo $before . 'categoria "' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+      echo $before . 'Resultados da pesquisa para "' . get_search_query() . '"' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -221,6 +221,33 @@ function wp_custom_breadcrumbs() {
  
   }
 } // end wp_custom_breadcrumbs()
+
+/*========================================================================== Função paginação*/
+
+function pagination_funtion() {
+// Get total number of pages
+global $wp_query;
+$total = $wp_query->max_num_pages;
+// Only paginate if we have more than one page                   
+if ( $total > 1 )  {
+    // Get the current page
+    if ( !$current_page = get_query_var('paged') )
+        $current_page = 1;
+                           
+        $big = 999999999;
+        // Structure of "format" depends on whether we’re using pretty permalinks
+        $permalink_structure = get_option('permalink_structure');
+        $format = empty( $permalink_structure ) ? '&page=%#%' : 'page/%#%/';
+        echo paginate_links(array(
+            'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+            'format' => $format,
+            'current' => $current_page,
+            'total' => $total,
+            'mid_size' => 2,
+            'type' => 'list'
+        ));
+    }
+}
 
 
 

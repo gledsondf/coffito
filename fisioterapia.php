@@ -16,8 +16,8 @@
 		<div class="principalArtigo artigo row">
 			<?php
 				    // Get the ID of a given category
-				    $category_noticiafisio = get_cat_ID( 'notícia - Fisioterapia' );
-				   
+				   // $category_noticiafisio = get_cat_ID( 'notícia - Fisioterapia' );
+				   	$category_noticiafisio = get_category_by_slug("noticiafisio")->cat_ID;
 
 				    // Get the URL of this category
  				   $category_link_noticiafisio = get_category_link( $category_noticiafisio );

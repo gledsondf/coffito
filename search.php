@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div id="conteudo" class="col-3quarto row">
 	<section>
+		<h1>Resultados da pesquisa</h1>
 		<?php /* O Ciclo — com comentários! */ ?>
 		<?php if (have_posts()) :?>	
 		<?php while ( have_posts() ) : the_post() ?>

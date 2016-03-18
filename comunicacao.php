@@ -16,7 +16,8 @@
 		<div class="principalArtigo artigo row">
 			<?php
 				    // Get the ID of a given category
-				    $category_noticiaComunicacao = get_cat_ID( 'notícia - Comunicação' );
+				   // $category_noticiaComunicacao = get_cat_ID( 'notícia - Comunicação' );
+				     $category_noticiaComunicacao = get_category_by_slug("noticiaComunicacao")->cat_ID;
 				   
 
 				    // Get the URL of this category

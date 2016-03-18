@@ -17,7 +17,7 @@
 
 <div id="menuLateral" class="col-quarto container">
 	<aside>
-		<?php get_sidebar(); ?>
+		<?php get_sidebar(categoria); ?>
 	</aside>
 </div><!--menuLateral-->
 <?php get_footer(); ?>
